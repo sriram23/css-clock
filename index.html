@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Clock</title>
+</head>
+<body>
+    <div class="clock">
+        <div class="sec"></div>
+        <div class="min"></div>
+        <div class="hr"></div>
+        <p id="time">The time is </p>
+    </div>
+    <script type = "text/javascript">
+        const startValue = -250;
+        const hour = document.querySelector(".hr");
+        const minute = document.querySelector(".min");
+        const sec = document.querySelector(".sec");
+        const time = document.querySelector("#time")
+        function getAngle() {
+            time.innerHTML = new Date().getHours()+":"+new Date().getMinutes()+":"+new Date().getSeconds();
+
+            const hrAngle = (new Date().getHours() * 30) + startValue;
+            const minAngle = (new Date().getMinutes() * 2) + startValue;
+            const secAngle = (new Date().getSeconds() * 2) + startValue;
+            
+            console.log("Angle: ", hrAngle, minAngle, secAngle)
+            hour.style.transform = `rotate(${hrAngle}deg)`;
+            minute.style.transform = `rotate(${minAngle}deg)`;
+            sec.style.transform = `rotate(${secAngle}deg)`;
+
+        }
+        setInterval(getAngle, 1000);
+    </script>
+</body>
+</html>
