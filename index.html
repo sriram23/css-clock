@@ -8,13 +8,29 @@
     <title>Clock</title>
   </head>
   <body>
-    <div class="clock">
-      <div class="sec"></div>
-      <div class="min"></div>
-      <div class="hr"></div>
-      <div class="center-point"></div>
+    <div class="clock-wrapper">
+      <div class="clock">
+        <div class="sec"></div>
+        <div class="min"></div>
+        <div class="hr"></div>
+        <div class="center-point"></div>
+        <div class="inner-center-point"></div>
+        <div class="number n1">1</div>
+        <div class="number n2">2</div>
+        <div class="number n3">3</div>
+        <div class="number n4">4</div>
+        <div class="number n5">5</div>
+        <div class="number n6">6</div>
+        <div class="number n7">7</div>
+        <div class="number n8">8</div>
+        <div class="number n9">9</div>
+        <div class="number n10">10</div>
+        <div class="number n11">11</div>
+        <div class="number n12">12</div>
+      </div>
+      <div class="knob"></div>
     </div>
-    <p id="time"></p>
+    <p>Current time: <span id="time"></span></p>
     <script type="text/javascript">
       // -90 deg to show 12'o clock position. 0deg will show 3'o clock
       const startValue = -90;
@@ -32,8 +48,8 @@
           new Date().getMinutes().toString().padStart(2, "0") +
           ":" +
           new Date().getSeconds().toString().padStart(2, "0");
-        
-        // 1 hr === 30 deg 
+
+        // 1 hr === 30 deg
         const hrAngle = (new Date().getHours() % 12) * 30 + startValue;
         // 1 min || 1 sec === 6 deg
         const minAngle = new Date().getMinutes() * 6 + startValue;
@@ -43,7 +59,7 @@
         minute.style.transform = `rotate(${minAngle}deg)`;
         sec.style.transform = `rotate(${secAngle}deg)`;
       }
-    // calling function with 1s interval
+      // calling function with 1s interval
       setInterval(getAngle, 1000);
     </script>
   </body>
