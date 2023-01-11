@@ -12,15 +12,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: black;
+  background: #0D0D0D;
   position: relative;
   border-radius: 50%;
 }
 .clock {
   padding: unset;
   margin: unset;
-  border: 2px solid black;
-  background: black;
+  border: 2px solid #0D0D0D;
+  background: #0D0D0D;
   width: 15rem;
   height: 15rem;
   border-radius: 50%;
@@ -157,7 +157,7 @@ body {
   width: 0.5rem;
   height: 1.5rem;
   position: absolute;
-  background: black;
+  background: #0D0D0D;
   right: -.5rem;
   border-radius: 2px;
 }
